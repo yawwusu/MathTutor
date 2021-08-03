@@ -17,12 +17,13 @@ While it was manual at that time, I would like others to have the same experienc
 - React and NextJS for Frontend
 - TypeScript for Implementation
 - Tailwind for CSS
-- Testing with ?
-- XState or Redux Toolkit for State management
+- React Context API for user state management
+- Testing with Cypress?
+- XState or Redux Toolkit for State management?
 
 **Server:**
 
-- NodeJS and Express for API
+- NodeJS and Webpack for API
 - Firebase and its services for database and authentication
 - Deploy on Vercel
 
@@ -100,3 +101,10 @@ For support, email yaw@fake.com or join our community channel.
 
 - Readme.so to generate template for ReadMe
 - Figma Flow Chart Primer in FigJam to generate template for flow chart
+- Bootstrap a next-app with tailwind configured with `npx create-next-app -e with-tailwindcss [project-name]` or `yarn create next-app -e with-tailwindcss [project-name]`
+
+## Next Steps
+
+- Configure and start using typescript throughout the project - use courses on Egghead (Beginner and Intermediate)
+- Main Feature to focus on: Dashboard - Progress Bar/ Chart, Buttons to redirect to Questions Page, Login redirect to Dashboard
+- Extras: Welcome and Login Pages
