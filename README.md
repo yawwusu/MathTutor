@@ -32,9 +32,25 @@ While it was manual at that time, I would like others to have the same experienc
 
 ## Features
 
-- User/Social Authentication (with Google, Facebook etc)
+- User/Social Authentication (with Email, Google and Facebook)
 - User Dashboard to track progress, analytics etc
 - Subscription plan (tutor help or only materials)
+
+## Pages
+
+- Welcome Page: A friendly and descriptive page to welcome a user who is new to the page (before registration) and give them an idea of what we offer in the app.
+
+- Registration/ Log-In Page: User will have to register to access dashboard. Once logged in, user should not need to log in again on the same device.
+
+- User Dashboard: This will be the personal space of the user, where they can see their current progress, change their settings, and choose to practice more questions (whether by Year or by Topic)
+
+- Settings Page: A page where the user can see and manage his/her current settings - subscription plan, profile details, possible dark/light mode etc.
+
+- Workspace: A page where questions will be displayed for users to solve and answer. Answers should be marked and reported afterwards and recommendations based on the users performance given (maybe a modal might be helpful here).
+
+## Data Flow Chart
+
+![Flow Chart](https://github.com/yawwusu/MathTutor/blob/master/FlowChart.png?raw=true)
 
 ---
 
@@ -44,7 +60,7 @@ Insert gif or link to demo
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 ## Target Users
 
@@ -79,3 +95,8 @@ For support, email yaw@fake.com or join our community channel.
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://yaw-blog.vercel.app/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+
+## Notes (Cools Tools and Tricks)
+
+- Readme.so to generate template for ReadMe
+- Figma Flow Chart Primer in FigJam to generate template for flow chart
