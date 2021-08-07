@@ -2,7 +2,13 @@ import React from "react";
 import { createUser } from "./db";
 import firebase from "./firebase";
 
-const authContext = React.createContext();
+interface authContextInterface {
+  user: firebase.User;
+  signinWithGoogle: () => any;
+  signout: () => any;
+}
+
+const authContext = React.createContext<authContextInterface | null>(null);
 
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
@@ -16,7 +22,7 @@ export const useAuth = () => {
 function useProvideAuth() {
   const [user, setUser] = React.useState(null);
 
-  const handleUser = (rawUser) => {
+  const handleUser = (rawUser: boolean | firebase.User) => {
     if (rawUser) {
       const user = formatUser(rawUser);
       createUser(user.uid, user);
@@ -28,18 +34,16 @@ function useProvideAuth() {
     }
   };
 
-  const signinWithGoogle = () => {
-    return firebase
+  const signinWithGoogle = async () => {
+    const response = await firebase
       .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((response) => handleUser(response.user));
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    return handleUser(response.user);
   };
 
-  const signout = () => {
-    return firebase
-      .auth()
-      .signOut()
-      .then(() => handleUser(false));
+  const signout = async () => {
+    await firebase.auth().signOut();
+    return handleUser(false);
   };
 
   React.useEffect(() => {
@@ -57,7 +61,7 @@ function useProvideAuth() {
   };
 }
 
-const formatUser = (user) => {
+const formatUser = (user: any) => {
   return {
     uid: user.uid,
     email: user.email,
