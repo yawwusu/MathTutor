@@ -17,15 +17,6 @@ export default function Home() {
 
       <main className="flex flex-col items-center justify-evenly w-full flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">Welcome to The Math Tutor!!!</h1>
-        {!auth.user ? (
-          <button onClick={() => auth.signinWithGoogle()}>
-            Sign In With Google
-          </button>
-        ) : (
-          <button onClick={() => auth.signout()}>
-            You are Ready To Rumble!!!
-          </button>
-        )}
       </main>
 
       <Footer />

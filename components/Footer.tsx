@@ -1,14 +1,17 @@
 function Footer() {
   return (
-    <footer className="flex items-center justify-center w-full h-24 border-t">
-      <a
-        className="flex items-center justify-center"
-        href="#"
-        // rel="noopener noreferrer"
-      >
-        Powered by{" "}
-        <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-      </a>
+    <footer className="flex items-center justify-between w-full h-12 border-t">
+      <ul className="flex items-center justify-evenly w-80">
+        <li>LinkedIn</li>
+        <li>Twitter</li>
+        <li>Facebook</li>
+        <li>Instagram</li>
+      </ul>
+      <ul className="flex items-center justify-evenly w-80">
+        <li>Terms</li>
+        <li>Privacy Policy</li>
+        <li>Support</li>
+      </ul>
     </footer>
   );
 }
