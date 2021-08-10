@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import DonutChart from "../components/DonutChart";
+import data from "../utils/data";
 
 export default function Dashboard() {
   return (
@@ -14,6 +16,7 @@ export default function Dashboard() {
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">Dashboard</h1>
+        <DonutChart data={data} />
       </main>
 
       <Footer />

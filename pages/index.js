@@ -1,11 +1,8 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import { useAuth } from "../lib/auth";
 
 export default function Home() {
-  const auth = useAuth();
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
