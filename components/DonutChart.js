@@ -1,7 +1,6 @@
 import React from "react";
 import { useD3 } from "../utils/useD3";
 import * as d3 from "d3";
-import { schemeDark2 } from "d3";
 
 function DonutChart({ data }) {
   const ref = useD3(
@@ -29,7 +28,7 @@ function DonutChart({ data }) {
 
       const arcs = pie(data);
 
-      svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
+      // svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
       // .style("background", "lightgrey");
 
       svg
@@ -42,6 +41,8 @@ function DonutChart({ data }) {
         .text((d) => `${d.data.topic}: ${d.data.progress.toLocaleString()}`);
 
       svg
+        .attr("width", width)
+        .attr("height", height)
         .append("g")
         .attr("font-family", "sans-serif")
         .attr("font-size", 12)
