@@ -108,3 +108,28 @@ For support, email yaw@fake.com or join our community channel.
 - Configure and start using typescript throughout the project - use courses on Egghead (Beginner and Intermediate)
 - Main Feature to focus on: Dashboard - Progress Bar/ Chart, Buttons to redirect to Questions Page, Login redirect to Dashboard
 - Extras: Welcome and Login Pages
+
+## Work in Progress Journal
+
+### Week 1
+
+### Week 2
+
+### Week 3
+
+- Converted everything to TypeScript - reverted back to Vanilla JavaScript though to save time. TypeScript version is in branch TypeScript. (I watched 2 TypeScript beginner courses on egghead: "Up and Running with TypeScript" by John Linqduist and "TypeScript: Tips and Tricks" by Kamran Ahmed and read some articles https://dev.to/waldo/next-js-typescript-tailwind-css-project-setup-4kcj to setup TypeScript)
+
+- Styled NavBar and Footer with Logo design in Figma, heroicon for user-avatar (thinking to use material-ui instead) and simple ul tags
+
+- Read article https://www.udacity.com/blog/2016/03/12-best-charting-libraries-for-web-developers.html to decide on charting tool to use to represent data. I initially have chosen d3.js and i'm watching some courses on egghead by Ben Clinkinbeard - awesome course. (thinking to use Google Charts though if things get complicated)
+
+- Useful links for chart:
+  https://observablehq.com/d/d552880942332983
+  https://www.pluralsight.com/guides/using-d3.js-inside-a-react-app
+  (Common error) https://stackoverflow.com/questions/61670459/nodejs-must-use-import-to-load-es-module
+  https://observablehq.com/@nhogs/svg-conic-gradient-simulation-in-progress-donut-chart
+
+- FirebaseUI issues:
+  -- Tried to use firebaseui to setup login page, but got "windows is undefined" error (https://frontend-digest.com/why-is-window-not-defined-in-nextjs-44daf7b4604e).
+  -- Then I tried to set it up with react-firebaseui following (https://dev.to/menard_codes/next-js-sign-in-page-with-firebase-ui-and-firebase-auth-5375), but got "options of undefined" error.
+  -- In the end, defaulted using my own buttons and firebase's inbuilt signin functions for the time being.
