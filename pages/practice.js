@@ -1,8 +1,23 @@
 import Head from "next/head";
+import * as React from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+// import ReactKatex from "../components/ReactKatex";
+import ReactLatex from "../components/ReactLatex";
+import { firestore } from "../lib/db";
 
 export default function Practice() {
+  const [question, setQuestion] = React.useState([]);
+
+  React.useEffect(() => {
+    const unsubscribe = firestore
+      .collection("questions")
+      .onSnapshot((snapshot) =>
+        setQuestion(snapshot.docs.map((doc) => doc.data()))
+      );
+    return unsubscribe;
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -11,13 +26,10 @@ export default function Practice() {
       </Head>
 
       <NavBar />
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Practice until you're Ready to Puke!!!
-        </h1>
+      <main className="flex flex-col items-center justify-center w-50 flex-1 px-20 ">
+        <ReactLatex question={question[0]} />
+        {/* <ReactKatex question={question[0]} /> */}
       </main>
-
       <Footer />
     </div>
   );
