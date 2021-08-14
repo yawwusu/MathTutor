@@ -32,7 +32,6 @@ export default function Dashboard() {
       <NavBar />
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">Dashboard</h1>
         <ProgressChart progress={progress[0].value} />
         {/* <DonutChart data={data} /> */}
       </main>

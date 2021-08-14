@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 // import { auth } from '../lib/auth';
 import firebase from "../lib/firebase";
 import { useAuth } from "../lib/auth";
-import { uiConfig } from "../lib/firebaseui";
+// import { uiConfig } from "../lib/firebaseui";
 
 export default function Login() {
   // const [user, loading, error] = useAuthState(auth);
@@ -21,19 +21,20 @@ export default function Login() {
     router.push("/dashboard");
   }
 
-  const authConfig = uiConfig(firebase);
+  // const authConfig = uiConfig(firebase);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Login to MathTutor</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <NavBar />
 
       <main className="flex flex-col items-center justify-evenly w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">Login/Register Page</h1>
+        <h3 className="text-3xl">
+          Login/ Register so we save and track your progress!
+        </h3>
         <p>No need to create another account!</p>
         {/* <StyledFirebaseAuth uiConfig={authConfig} firebaseAuth={auth} /> */}
         <div className="flex flex-col">

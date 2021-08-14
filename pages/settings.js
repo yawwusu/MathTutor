@@ -12,9 +12,7 @@ export default function Settings() {
 
       <NavBar />
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">Settings Page</h1>
-      </main>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"></main>
 
       <Footer />
     </div>

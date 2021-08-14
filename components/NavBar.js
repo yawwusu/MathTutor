@@ -16,6 +16,9 @@ function NavBar() {
   return (
     <nav className="flex items-center justify-between p-2 w-full h-12 border-b">
       <img src="/logo.svg" alt="Math Tutor Logo" className="h-10 ml-2" />
+      <h1 className="text-3xl font-bold">
+        {router?.pathname?.slice(1)?.toUpperCase()}
+      </h1>
       <div
         onClick={handleAuth()}
         className="group flex flex-col items-center cursor-pointer w-12 sm:w-20 hover:text-black"
