@@ -1,15 +1,19 @@
 import React from "react";
 import Head from "next/head";
-import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+// import dynamic from "next/dynamic";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { firestore } from "../lib/db";
+import ProgressChart from "../components/ProgressChart";
 // import DonutChart from "../components/DonutChart";
 // import data from "../utils/data";
 
-const ProgressChart = dynamic(() => import("../components/ProgressChart"));
+// const ProgressChart = dynamic(() => import("../components/ProgressChart"));
 
 export default function Dashboard() {
+  const router = useRouter();
+
   // TODO: This is sort of a hack, improve handling of progress later
   const [progress, setProgress] = React.useState([{ value: 0 }]);
 
@@ -34,6 +38,12 @@ export default function Dashboard() {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <ProgressChart progress={progress[0].value} />
         {/* <DonutChart data={data} /> */}
+        <button
+          className="bg-gray-200 p-1.5"
+          onClick={() => router.push("/practice")}
+        >
+          Practice
+        </button>
       </main>
 
       <Footer />

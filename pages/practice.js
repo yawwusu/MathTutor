@@ -2,8 +2,7 @@ import Head from "next/head";
 import * as React from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-// import ReactKatex from "../components/ReactKatex";
-import ReactLatex from "../components/ReactLatex";
+import QuestionForm from "../components/QuestionForm";
 import { firestore } from "../lib/db";
 
 export default function Practice() {
@@ -27,8 +26,7 @@ export default function Practice() {
 
       <NavBar />
       <main className="flex flex-col items-center justify-center w-50 flex-1 px-20 ">
-        <ReactLatex question={question[0]} />
-        {/* <ReactKatex question={question[0]} /> */}
+        <QuestionForm question={question[0]} />
       </main>
       <Footer />
     </div>
