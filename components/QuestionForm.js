@@ -159,7 +159,7 @@ function QuestionForm({ questions }) {
             <button
               type="submit"
               className="bg-green-200 disabled:bg-green-200 hover:bg-green-400 px-10 py-2 mt-5 rounded-full"
-              disabled={!choice}
+              disabled={choice}
             >
               Check
             </button>
