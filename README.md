@@ -18,8 +18,8 @@ While it was manual at that time, I would like others to have the same experienc
 - TypeScript for Implementation
 - Tailwind for CSS
 - React Context API for user state management
+- XState Form State management
 - Testing with Cypress?
-- XState or Redux Toolkit for State management?
 
 **Server:**
 
@@ -45,9 +45,10 @@ While it was manual at that time, I would like others to have the same experienc
 
 - User Dashboard: This will be the personal space of the user, where they can see their current progress, change their settings, and choose to practice more questions (whether by Year or by Topic)
 
-- Settings Page: A page where the user can see and manage his/her current settings - subscription plan, profile details, possible dark/light mode etc.
-
 - Workspace: A page where questions will be displayed for users to solve and answer. Answers should be marked and reported afterwards and recommendations based on the users performance given (maybe a modal might be helpful here).
+  ![State Chart](https://github.com/yawwusu/MathTutor/blob/master/StateChart.png?raw=true)
+
+- Settings Page: A page where the user can see and manage his/her current settings - subscription plan, profile details, possible dark/light mode etc.
 
 ## Data Flow Chart
 
@@ -105,23 +106,35 @@ For support, email yaw@fake.com or join our community channel.
 
 ## Next Steps
 
-- Configure and start using typescript throughout the project - use courses on Egghead (Beginner and Intermediate)
-- Main Feature to focus on: Dashboard - Progress Bar/ Chart, Buttons to redirect to Questions Page, Login redirect to Dashboard
-- Extras: Welcome and Login Pages
+- Main Feature to focus on: Practice area - Questions and Feedback
+- Setup tests for main components of app
+- Extras: Iterate on and improve previous pages
 
 ## Work in Progress Journal
 
 ### Week 1
 
+Did some research on:
+
+- [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
+- State Management:
+
 ### Week 2
+
+Just started something! To get momentum going, I setup main pages - Welcome, Dashboard, Practice, Settings and Login and setup firebase and user authentication.
+Everything is in Vanilla Javascript now, I plan to convert it to TypeScript next week.
+
+- Also set up [my blog](https://yaw-blog.vercel.app) using Laurie Barth's [Build a developer blog with Gatsby](https://egghead.io/courses/build-a-developer-blog-with-gatsby-bd96) course on Egghead.
+
+- I plan to try it out with Joel Hook's [blog template](https://github.com/joelhooks/next-typescript-tailwind-mdx-starter) later too
 
 ### Week 3
 
-- Converted everything to TypeScript - reverted back to Vanilla JavaScript though to save time. TypeScript version is in branch TypeScript. (I watched 2 TypeScript beginner courses on egghead: "Up and Running with TypeScript" by John Linqduist and "TypeScript: Tips and Tricks" by Kamran Ahmed and read some articles https://dev.to/waldo/next-js-typescript-tailwind-css-project-setup-4kcj to setup TypeScript)
+- Converted everything to TypeScript - reverted back to Vanilla JavaScript though to save time. TypeScript version is in branch TypeScript. (I watched 2 TypeScript beginner courses on egghead: [Up and Running with TypeScript](https://egghead.io/courses/up-and-running-with-typescript) by John Linqduist and [TypeScript: Tips and Tricks](https://egghead.io/courses/typescript-tips-and-tricks-20c4) by Kamran Ahmed and read [some articles](https://dev.to/waldo/next-js-typescript-tailwind-css-project-setup-4kcj) to setup TypeScript)
 
 - Styled NavBar and Footer with Logo design in Figma, heroicon for user-avatar (thinking to use material-ui instead) and simple ul tags
 
-- Read article https://www.udacity.com/blog/2016/03/12-best-charting-libraries-for-web-developers.html to decide on charting tool to use to represent data. I initially have chosen d3.js and i'm watching some courses on egghead by Ben Clinkinbeard - awesome course. (thinking to use Google Charts though if things get complicated)
+- Read [an article](https://www.udacity.com/blog/2016/03/12-best-charting-libraries-for-web-developers.html) to decide on charting tool to use to represent data. I initially have chosen d3.js and i'm watching some courses on egghead by Ben Clinkinbeard - awesome course. (thinking to use Google Charts though if things get complicated)
 
 - Useful links for chart:
   https://observablehq.com/d/d552880942332983
@@ -133,3 +146,24 @@ For support, email yaw@fake.com or join our community channel.
   -- Tried to use firebaseui to setup login page, but got "windows is undefined" error (https://frontend-digest.com/why-is-window-not-defined-in-nextjs-44daf7b4604e).
   -- Then I tried to set it up with react-firebaseui following (https://dev.to/menard_codes/next-js-sign-in-page-with-firebase-ui-and-firebase-auth-5375), but got "options of undefined" error.
   -- In the end, defaulted using my own buttons and firebase's inbuilt signin functions for the time being.
+
+  - TO REVISIT:
+    -- Individual progress charts for topics and years
+    -- Add progress to use profile
+
+## Week 4
+
+#### Handled latex rendering with React Latex (which depends on Katex - the fastest rendering engine)
+
+- https://theme-next.js.org/docs/third-party-services/math-equations#Numbering-and-Referring-Equations-in-MathJax
+- https://github.com/harunurhan/react-latex-next
+- https://katex.org/docs/libs.html
+
+#### Question form
+
+#### Managing form state with Xstate.
+
+- Resources:
+  [Kyle Shevlin's course on egghead]()
+  [XState docs for React](https://xstate.js.org/docs/recipes/react.html#hooks)
+  [David Kpiano's talk on CSSConf-Budapest](https://youtu.be/0cqeGeC98MA)

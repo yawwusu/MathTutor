@@ -15,7 +15,7 @@ function ProgressChart({ progress }) {
         .range(nbArcs)
         .map((d, i) => ({ id: "something", progress: progress / nbArcs }))
         .concat({ id: "something", progress: 100 - progress, color: "none" });
-      console.log("data", data);
+      // console.log("data", data);
 
       svg.attr("text-anchor", "middle").style("font", "12px sans-serif");
 
