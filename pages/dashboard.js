@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 // import dynamic from "next/dynamic";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import { firestore } from "../lib/db";
+// import { firestore } from "../lib/db";
 import ProgressChart from "../components/ProgressChart";
 // import DonutChart from "../components/DonutChart";
 // import data from "../utils/data";
@@ -15,16 +15,16 @@ export default function Dashboard() {
   const router = useRouter();
 
   // TODO: This is sort of a hack, improve handling of progress later
-  const [progress, setProgress] = React.useState([{ value: 0 }]);
+  const [progress, setProgress] = React.useState([{ value: 20 }]);
 
-  React.useEffect(() => {
-    const unsubscribe = firestore
-      .collection("progress")
-      .onSnapshot((snapshot) =>
-        setProgress(snapshot.docs.map((doc) => doc.data()))
-      );
-    return unsubscribe;
-  }, []);
+  // React.useEffect(() => {
+  //   const unsubscribe = firestore
+  //     .collection("progress")
+  //     .onSnapshot((snapshot) =>
+  //       setProgress(snapshot.docs.map((doc) => doc.data()))
+  //     );
+  //   return unsubscribe;
+  // }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">

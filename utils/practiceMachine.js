@@ -4,10 +4,11 @@ const initial = "unsolved";
 
 const context = {
   prev_question_id: 0,
-  curr_question_id: 1,
-  next_question_id: 2,
-  answer: "",
-  choice: "",
+  curr_question_id: 0,
+  next_question_id: 1,
+  questions: [],
+  choice: null,
+  progress: 0,
 };
 
 const states = {
@@ -25,8 +26,30 @@ const states = {
         on: {
           SUBMIT: "#solved",
         },
-        activities: ["saveChoice"],
+        // on: {
+        //   A: {
+        //     target: "submitting",
+        //     actions: ["saveChoice"],
+        //   },
+        //   B: {
+        //     target: "submitting",
+        //     actions: ["saveChoice"],
+        //   },
+        //   C: {
+        //     target: "submitting",
+        //     actions: ["saveChoice"],
+        //   },
+        //   D: {
+        //     target: "submitting",
+        //     actions: ["saveChoice"],
+        //   },
+        // },
       },
+      // submitting: {
+      //   on: {
+      //     SUBMIT: "#solved",
+      //   },
+      // },
     },
   },
   solved: {
@@ -83,30 +106,31 @@ const options = {
     //   questions: (context, event) => event.data,
     // }),
     saveChoice: (context, event) => {
-      context.choice = "choice";
+      context.choice = event.type;
     },
     getNextQuestion: (context, event) => {
       context.prev_question_id = context.curr_question_id;
       context.curr_question_id = context.next_question_id;
-      console.log("next question");
+      context.next_question_id += 1;
+      // context.curr_question_id += 1;
+      context.choice = null;
     },
     getPrevQuestion: (context, event) => {
       context.next_question_id = context.curr_question_id;
       context.curr_question_id = context.prev_question_id;
+      context.prev_question_id -= 1;
       console.log("previous question");
     },
   },
   activities: {
-    saveChoice: (context, event) => {
-      context.choice = "c";
-    },
     updateProgressBar: (context, event) => {
       console.log("updating progress bar");
     },
   },
   guards: {
     isPreviousEnabled: (context) => context.prev_question_id > 0,
-    isCorrect: (context) => context.choice === context.answer,
+    isCorrect: (context) =>
+      context.choice === context.questions[context.curr_question_id].answer,
   },
 };
 
