@@ -167,3 +167,9 @@ Everything is in Vanilla Javascript now, I plan to convert it to TypeScript next
   [Kyle Shevlin's course on egghead]()
   [XState docs for React](https://xstate.js.org/docs/recipes/react.html#hooks)
   [David Kpiano's talk on CSSConf-Budapest](https://youtu.be/0cqeGeC98MA)
+
+## Week 5
+
+- Added more questions and ability to scroll through questions
+
+- Hooked xstate to Question's form - but not working optimally (a lot of re-renders and controlled component not working) - I think xstate is not the best tool for this use case. I've saved what i did in the branch xstate

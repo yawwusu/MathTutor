@@ -39,7 +39,7 @@ export default function Dashboard() {
         <ProgressChart progress={progress[0].value} />
         {/* <DonutChart data={data} /> */}
         <button
-          className="bg-gray-200 p-1.5"
+          className="bg-green-400 p-1.5 mt-2"
           onClick={() => router.push("/practice")}
         >
           Practice
